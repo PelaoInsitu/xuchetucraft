@@ -1,0 +1,6 @@
+openssl
+build
+dist
+api/credentials.json
+.venv
+__pycache__
