@@ -4,3 +4,4 @@ dist
 api/credentials.json
 .venv
 __pycache__
+compiler.bat

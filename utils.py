@@ -2,6 +2,7 @@ import sys
 import os
 from interface.window import WindowApp
 import tkinter as tk
+import subprocess
 
 def resource_path(relative_path):
     """Get absolute path to resource, works for dev and for PyInstaller."""
@@ -43,3 +44,16 @@ def clean_incomplete_files(directory):
         filepath = os.path.join(directory, filename)
         if os.path.isfile(filepath) and os.path.getsize(filepath) == 0:
             os.remove(filepath)
+
+
+def execute_file(file_path):
+    # Intentar abrir el archivo usando el programa predeterminado del sistema
+    try:
+        if os.name == 'nt':  # Windows
+            os.startfile(file_path)
+        elif os.name == 'posix':  # macOS / Linux
+            subprocess.call(['open' if sys.platform == 'darwin' else 'xdg-open', file_path])
+        else:
+            print("Sistema operativo no soportado para abrir el archivo.")
+    except Exception as e:
+        print(f"Error al abrir el archivo: {e}")

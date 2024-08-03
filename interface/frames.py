@@ -16,6 +16,8 @@ from settings import(
     MINECRAFT_MODS_PATH,
     MINECRAFT_SHADERS_PATH,
     SHADERS_FOLDER_ID,
+    MODLOADER_FOLDER_ID,
+    MODLOADER_FOLDER_PATH,
     SERVER_PROPS_ID
     )
 import tkinter as tk
@@ -24,7 +26,7 @@ from PIL import ImageTk, Image
 from api.local_handler import LocalHandler
 from api.cloud_handler import GoogleDriveHandler
 import json
-from utils import copy_to_clipboard, get_width_root
+from utils import copy_to_clipboard, get_width_root, execute_file
 
 
 
@@ -80,14 +82,18 @@ def menu_frame(root):
     page.configure(width=APP_WIDTH, height=APP_HEIGHT, bg=root.cget('bg'))
     page.pack(fill=tk.BOTH, expand=True)
 
+    def option_1_on_click():
+        path_file = GoogleDriveHandler.download_file(MODLOADER_FOLDER_ID, MODLOADER_FOLDER_PATH)
+        execute_file(path_file)
+
     def option_2_on_click():
         page.destroy()
         mods_frame(root)
 
 
     #Opción 1
-    btn_text_menu_option_1 = tk.Button(page, text=BTN_TEXT_MENU_OPTION_1)
-    btn_text_menu_option_1.configure(state="disabled", padx=30, pady=5, bg="black", fg="white")
+    btn_text_menu_option_1 = tk.Button(page, text=BTN_TEXT_MENU_OPTION_1, command=option_1_on_click)
+    btn_text_menu_option_1.configure(state="normal", padx=30, pady=5, bg="black", fg="white")
     btn_text_menu_option_1.pack(expand=True, pady=(0, 5))
     #Opción 2
     btn_text_menu_option_2 = tk.Button(page, text=BTN_TEXT_MENU_OPTION_2, command=option_2_on_click)

@@ -22,9 +22,10 @@ UNNECESSARY_MODS_PATH = os.path.join(MINECRAFT_MODS_PATH, UNNECESSARY_FOLDER_NAM
 
 #Drive
 MODS_FOLDER_ID = '1AqsEcctxUZKkonbm-qf_eYoD3CgnE1W0'
-FORGE_FOLDER_ID = '16MR3nq68HiKVnCDOkv-Ee0DvcE_go78_'
+MODLOADER_FOLDER_ID = '16MR3nq68HiKVnCDOkv-Ee0DvcE_go78_'
 SHADERS_FOLDER_ID = '1skpsR8HndesUUMom6mR4Asqrt7_vBRFf'
 SERVER_PROPS_ID = '1gr6WmDxg9r6TBz31-FLdL5b40OF1fe2a'
+MODLOADER_FOLDER_PATH = os.path.join(os.path.expanduser('~'), 'Downloads')
 
 #Propiedades de autenticación
 APP_CREDENTIALS = os.path.join(AUTH_DIR, 'credentials.json')
@@ -32,13 +33,13 @@ APP_TOKEN = os.path.join(AUTH_DIR, 'token.json')
 
 
 #Propiedades de Interfaz
-APP_VERSION = '1.3.0'
+APP_VERSION = '1.4.0'
 APP_NAME = 'Xuchetucraft'
 APP_LAYER = 'Modpack Installer'
 APP_DESCRIPTION = '''
-Bienvenido a la beta de mi gestor de mods para Amujeraos Server. Aquí podrás:
+Bienvenido a la beta de mi gestor de mods para mi server. Aquí podrás:
 
-1. Instalar la versión de Forge necesaria (próximamente)
+1. Instalar la versión del modloader necesaria
 2. Descargar todos los mods necesarios para acceder al servidor (shaders incluidos)
 
 '''
@@ -46,7 +47,7 @@ Bienvenido a la beta de mi gestor de mods para Amujeraos Server. Aquí podrás:
 #RELATIVE_ROUTES
 APP_ICON = os.path.join(ASSETS_DIR, 'panda.ico')
 APP_MAIN_IMAGE = os.path.join(ASSETS_DIR, 'novaskin-wallpaper-llama_cut.jpg')
-APP_LOGO = os.path.join(ASSETS_DIR, 'xuchetucraft_logo.jpg')
+APP_LOGO = os.path.join(ASSETS_DIR, 'xuchetucraft_logov2.jpg')
 
 
 APP_WIDTH = None
@@ -73,8 +74,8 @@ BTN_TEXT_BACK = 'Volver'
 BTN_TEXT_RELOAD = 'Recargar'
 BTN_TEXT_DELETE = 'Eliminar'
 BTN_TEXT_FINISH = 'Finalizar'
-BTN_TEXT_MENU_OPTION_1 = 'Instalar Forge'
-BTN_TEXT_MENU_OPTION_2 = 'Instalar mods'
+BTN_TEXT_MENU_OPTION_1 = 'Paso 1: Instalar Fabric 1.20.1'
+BTN_TEXT_MENU_OPTION_2 = 'Paso 2: Instalar mods'
 
 #Frames (textos)
 OPTION_2_TITLE = "Instalar mods"
